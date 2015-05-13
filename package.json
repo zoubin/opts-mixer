@@ -1,0 +1,34 @@
+{
+  "name": "util-mix",
+  "version": "1.0.0",
+  "description": "object mixing methods",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tape test/*.js | faucet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zoubin/util-mix.git"
+  },
+  "keywords": [
+    "object",
+    "mix",
+    "merge",
+    "copy",
+    "pick",
+    "options"
+  ],
+  "author": "zoubin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zoubin/util-mix/issues"
+  },
+  "homepage": "https://github.com/zoubin/util-mix",
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "tape": "^4.0.0"
+  }
+}
