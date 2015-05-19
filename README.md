@@ -9,7 +9,7 @@ var mix = Mixer.mix;
 
 var o = mix({ a: 1 }, { b: 2 }); // { a: 1, b: 2 }
 
-var mixer = Mixer(['a', 'b'], { a: 0, b: 0 });
+var mixer = Mixer({ a: 0, b: 0 });
 o = mixer.mix({}); // { a: 0, b: 0 }
 o = mixer.mix({ c: 1 }); // { a: 0, b: 0, c: 1 }
 ```
@@ -36,6 +36,9 @@ Same as `Mixer.merge(src1, src2,...)`, but only keys specified in *filter* appea
 
 * *filter*: Array. Only mix keys contained in *filter*.
 * *defaults*: Array. Always mix *defaults*, and it will always be overwritten.
+
+## mixer = Mixer(o). o is Object rather than Array
+Same as `Mixer(Object.keys(o), o)`
 
 ### mixer.mix(receiver, src1, src2,...)
 

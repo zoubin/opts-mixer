@@ -13,7 +13,7 @@ function Mixer(filter, defaults) {
     }
     if (!Array.isArray(filter)) {
         defaults = filter;
-        filter = null;
+        filter = defaults ? Object.keys(defaults) : null;
     }
     this.filter = filter;
     this.defaults = defaults || {};
