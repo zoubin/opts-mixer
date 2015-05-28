@@ -1,6 +1,7 @@
 var util = require('util');
-module.exports = Mixer;
+module.exports = mix;
 module.exports.mix = mix;
+module.exports.Mixer = Mixer;
 module.exports.pick = pick;
 module.exports.eachOwn = eachOwn;
 module.exports.has = has;

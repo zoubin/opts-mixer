@@ -4,8 +4,8 @@ Object mixing methods
 ## Usage
 
 ```javascript
-var Mixer = require('util-mix');
-var mix = Mixer.mix;
+var mix = require('util-mix');
+var Mixer = mix.Mixer;
 
 var o = mix({ a: 1 }, { b: 2 }); // { a: 1, b: 2 }
 

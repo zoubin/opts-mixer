@@ -1,5 +1,5 @@
 var test = require('tape');
-var Mixer = require('..');
+var Mixer = require('..').Mixer;
 
 test('Mixer(filter, defaults)', function (t) {
     var opts = Mixer(['a', 'b'], { a: 0, b: 0 });
