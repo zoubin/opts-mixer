@@ -5,7 +5,7 @@ Object mixing methods
 
 ```javascript
 var util = require('util-mix');
-// acturally util === mix
+// actually util === mix
 var mix = util.mix;
 var Mixer = util.Mixer;
 
