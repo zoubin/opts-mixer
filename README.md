@@ -30,9 +30,16 @@ Same as `Mixer.mix({}, src1, src2,...)`.
 Same as `Mixer.mix({}, src)`.
 
 ## util.pick(filter, src1, src2,...)
+
+* filter: String | Array
+
 Same as `Mixer.merge(src1, src2,...)`, but only keys specified in *filter* appear in the result.
 
-*filter*: *Array*. Keys to merge.
+## util.unpick(filter, src1, src2,...)
+
+* filter: String | Array
+
+Merge all properties from  `src1, src2,...` except those appear in `filter`
 
 ## mixer = Mixer(filter, defaults)
 
