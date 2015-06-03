@@ -23,11 +23,27 @@ Same key causes overwriting, the later appearance in *arguments* the winner.
 
 The *receiver* will be returned.
 
+```javascript
+var r = {};
+var o = mix(r, { x:1, y:1 }, { y:2 });
+
+o === r; // true
+o; // { x:1, y:2 }
+```
+
 ## util.merge(src1, src2,...)
 Same as `Mixer.mix({}, src1, src2,...)`.
 
+```javascript
+var r = {};
+var o = merge(r, { x:1, y:1 }, { y:2 });
+
+r; // {}
+o; // { x:1, y:2 }
+```
+
 ## util.copy(src)
-Same as `Mixer.mix({}, src)`.
+Same as `merge`.
 
 ## util.pick(filter, src1, src2,...)
 
@@ -35,23 +51,50 @@ Same as `Mixer.mix({}, src)`.
 
 Same as `Mixer.merge(src1, src2,...)`, but only keys specified in *filter* appear in the result.
 
+```javascript
+var o = pick(['x', 'y'], { x:1, y:1 }, { y:2 }, { z:3 });
+
+o; // { x:1, y:2 }
+```
+
 ## util.unpick(filter, src1, src2,...)
 
 * filter: String | Array
 
 Merge all properties from  `src1, src2,...` except those appear in `filter`
 
+```javascript
+var o = unpick(['x', 'y'], { x:1, y:1 }, { y:2 }, { z:3 });
+
+o; // { z:3 }
+```
+
 ## mixer = Mixer(filter, defaults)
 
 * *filter*: Array. Only mix keys contained in *filter*.
-* *defaults*: Array. Always mix *defaults*, and it will always be overwritten.
+* *defaults*: Object. Always mix *defaults*, and it will always be overwritten.
+
+```javascript
+var mixer = Mixer(['x', 'y'], { x:1 });
+var opts = {};
+var o = mixer.mix(opts, { y:2, z:3 });
+
+o === opts; // true
+o; // { x:1, y:2 }
+```
 
 ## mixer = Mixer(o). o is Object rather than Array
 Same as `Mixer(Object.keys(o), o)`
 
-### mixer.mix(receiver, src1, src2,...)
+```javascript
+var mixer = Mixer({ x:1, y:1 });
+var o = mixer.merge({ y:2 }, { z:3 });
 
-Same as `Mixer.mix(receiver, defaults, Mixer.pick(filter, src1, src2, ...))`.
+o === opts; // true
+o; // { x:1, y:2 }
+```
+
+### mixer.mix(receiver, src1, src2,...)
 
 Only specified keys (by *filter*) are mixed into *receiver*.
 
