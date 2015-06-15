@@ -1,3 +1,6 @@
+# 1.2.1
+fix `.merge`, `.copy`, never use `.bind` to give a exports
+
 # 1.2.0
 add `.unpick`
 
