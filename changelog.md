@@ -1,3 +1,6 @@
+# 1.2.2
+add `.chop`
+
 # 1.2.1
 fix `.merge`, `.copy`, never use `.bind` to give a exports
 
