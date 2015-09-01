@@ -4,10 +4,8 @@ Object mixing methods
 ## Usage
 
 ```javascript
-var util = require('util-mix');
-// actually util === mix
-var mix = util.mix;
-var Mixer = util.Mixer;
+var mix = require('util-mix');
+var Mixer = require('util-mix/lib/Mixer');
 
 var o = mix({ a: 1 }, { b: 2 }); // { a: 1, b: 2 }
 
@@ -16,7 +14,7 @@ o = mixer.mix({}); // { a: 0, b: 0 }
 o = mixer.mix({ c: 1 }); // { a: 0, b: 0, c: 1 }
 ```
 
-## util.mix(receiver, src1, src2,...)
+## mix(receiver, src1, src2,...)
 Mix own properties supplied by *src1*, *src2*,..., into *receiver*, which must be a non-null object.
 
 Same key causes overwriting, the later appearance in *arguments* the winner.
@@ -31,8 +29,8 @@ o === r; // true
 o; // { x:1, y:2 }
 ```
 
-## util.merge(src1, src2,...)
-Same as `util.mix({}, src1, src2,...)`.
+## merge(src1, src2,...)
+Same as `mix({}, src1, src2,...)`.
 
 ```javascript
 var r = {};
@@ -42,16 +40,16 @@ r; // {}
 o; // { x:1, y:2 }
 ```
 
-## util.copy(src)
-Same as `util.merge`.
+## copy(src)
+Same as `merge`.
 
-## util.pick(filter, src1, src2,...)
+## pick(filter, src1, src2,...)
 
 ### filter
 
 Type: `String`, `Array`
 
-Same as `util.merge(src1, src2,...)`, but only keys specified in `filter` appear in the result.
+Same as `merge(src1, src2,...)`, but only keys specified in `filter` appear in the result.
 
 ```javascript
 var o = pick(['x', 'y'], { x:1, y:1 }, { y:2 }, { z:3 });
@@ -59,7 +57,7 @@ var o = pick(['x', 'y'], { x:1, y:1 }, { y:2 }, { z:3 });
 o; // { x:1, y:2 }
 ```
 
-## util.unpick(filter, src1, src2,...)
+## unpick(filter, src1, src2,...)
 
 ### filter
 
@@ -74,7 +72,7 @@ var o = unpick(['x', 'y'], { x:1, y:1 }, { y:2 }, { z:3 });
 o; // { z:3 }
 ```
 
-## util.chop(filter, o)
+## chop(filter, o)
 
 ### filter
 
@@ -90,7 +88,7 @@ chopped; // { x:1, y:2 }
 o; // { z:3 }
 ```
 
-## Class: util.Mixer
+## Class: Mixer
 
 ### methods
 
