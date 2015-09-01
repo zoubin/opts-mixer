@@ -1,3 +1,8 @@
+# 2.0.0
+* No longer exports methods other than `mix`.
+* Use `tap`
+* Use `eslint`
+
 # 1.2.2
 add `.chop`
 
