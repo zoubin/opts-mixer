@@ -1,3 +1,6 @@
+# 3.0.0
+* Use `require('util-mix/xxx')`
+
 # 2.0.0
 * No longer exports methods other than `mix`.
 * Use `tap`

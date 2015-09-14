@@ -5,7 +5,7 @@ Object mixing methods
 
 ```javascript
 var mix = require('util-mix');
-var Mixer = require('util-mix/lib/Mixer');
+var Mixer = require('util-mix/Mixer');
 
 var o = mix({ a: 1 }, { b: 2 }); // { a: 1, b: 2 }
 
