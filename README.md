@@ -29,6 +29,17 @@ o === r; // true
 o; // { x:1, y:2 }
 ```
 
+## mix-undef(receiver, src1, src2,...)
+Same with `mix`, except that properties are only mixed when not defined in `receiver`.
+
+```javascript
+var mix = require('util-mix/mix-undef');
+var o = { x: 1 };
+mix(o, { x: 2 }, { y: 2 }, { z: 3 }, { x: 3 });
+
+o; // { x: 1, y: 2, z: 3 }
+```
+
 ## merge(src1, src2,...)
 Same as `mix({}, src1, src2,...)`.
 
