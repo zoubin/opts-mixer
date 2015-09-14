@@ -1,6 +1,6 @@
 {
   "name": "util-mix",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "object mixing methods",
   "main": "lib/mix.js",
   "directories": {
