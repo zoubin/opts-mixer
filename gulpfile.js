@@ -12,6 +12,11 @@ gulp.task('lib', ['clean'], function () {
     .pipe(gulp.dest('build'));
 });
 
+gulp.task('docs', ['clean'], function () {
+  return gulp.src('README.md')
+    .pipe(gulp.dest('build'));
+});
+
 gulp.task('package', ['clean'], function () {
   return gulp.src('./package.json')
     .pipe(editor({
@@ -20,5 +25,5 @@ gulp.task('package', ['clean'], function () {
     .pipe(gulp.dest('build'));
 });
 
-gulp.task('default', ['lib', 'package']);
+gulp.task('default', ['lib', 'docs', 'package']);
 
